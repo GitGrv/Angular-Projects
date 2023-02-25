@@ -1,0 +1,17 @@
+
+<div id="todays-food-list">
+    <h4>Todays Food Item List</h4>
+    <table> 
+        <tr>
+            <th>Name</th> &nbsp;
+            <br>
+            <th>Calories</th>
+        </tr>
+        <tr *ngFor="let food of todaysFoodList">
+            <td>{{food.name}}</td>
+            <br>
+            <td>{{food.calories}}x{{food.numberOfFoodItem}}</td>
+        </tr>
+    </table>
+    <h4 id="totalCalories">Total Calories Today: {{totalCalories}}</h4>
+</div>

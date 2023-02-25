@@ -1,0 +1,15 @@
+<button  id="addFood" (click)="addFood()" >Add Food</button>
+<button id="closeForm" (click)="close()" >Close Form</button>
+<form action="" [formGroup]="formData" (ngSubmit)="onSubmit()" [ngClass]="{showForm:display==true}">
+    <label for="">Name</label>
+    <input type="text" name="name" id="name" formControlName="name">
+    
+    <label for="">Image</label>
+    <input type="text" formControlName="img">
+
+    <label for="">Calories</label>
+    <input type="number" formControlName="calories">
+
+    <button id="btn" type="submit" >Submit</button>
+
+</form>

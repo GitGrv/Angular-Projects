@@ -1,0 +1,109 @@
+<div class="registration-form">
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <h1>User Registration Page</h1>
+    <label for="inputFirstname">First Name</label>
+    <input
+      type="text"
+      placeholder="Enter Your Firstname..."
+      id="inputFirstname"
+      formControlName="firstname"
+    />
+    <p
+      *ngIf="reactiveForm.get('firstname').errors?.['required'] && reactiveForm.get('firstname').touched"
+    >
+      Please Enter Your FirstName
+    </p>
+    <p
+      *ngIf="reactiveForm.get('firstname').errors?.['pattern'] && reactiveForm.get('firstname').touched"
+    >
+      You Cannot use special characters in firstname
+    </p>
+    <p
+      *ngIf="reactiveForm.get('firstname').errors?.['minlength'] && reactiveForm.get('firstname').touched"
+    >
+      Name is too small
+    </p>
+    <p
+      *ngIf="reactiveForm.get('firstname').errors?.['maxlength'] && reactiveForm.get('firstname').touched"
+    >
+      Name is too large
+    </p>
+    <br />
+
+    <label id="gender">Gender </label>
+    <input
+      type="checkbox"
+      formControlName="gender"
+      [checked]="currentlyChecked === checkboxType.Male"
+      (click)="selectCheckBox(checkboxType.Male)"
+    />
+    <label>Male</label>
+    <input
+      type="checkbox"
+      formControlName="gender"
+      [checked]="currentlyChecked === checkboxType.Female"
+      (click)="selectCheckBox(checkboxType.Female)"
+    />
+    <label>Female</label>
+    <br />
+    <p
+      *ngIf="
+        !reactiveForm.get('gender').valid && reactiveForm.get('gender').touched
+      "
+    >
+      Please Select Your Gender
+    </p>
+    <br />
+    <label for="country">Country </label>
+    <select name="" id="country" formControlName="country">
+      <option value="india">India</option>
+      <option value="us">US</option>
+      <option value="canada">Canada</option>
+      <option value="china">China</option>
+      <option value="Bangladesh">Bangladesh</option>
+      <option value="Pakistan">Pakistan</option>
+      <option value="Myanmar">Myanmar</option>
+      <option value="Nepal">Nepal</option>
+      <option value="Bhutan">Bhutan</option>
+    </select>
+    <p
+      *ngIf="
+        !reactiveForm.get('country').valid &&
+        reactiveForm.get('country').touched
+      "
+    >
+      Select Your Country
+    </p>
+
+    <label for="city">City </label>
+    <input
+      type="text"
+      placeholder="Enter Your City..."
+      id="city"
+      formControlName="city"
+    />
+    <p
+      *ngIf="
+        !reactiveForm.get('city').valid && reactiveForm.get('city').touched
+      "
+    >
+      Please Enter Your City
+    </p>
+    <label for="age">Age </label>
+    <input
+      type="number"
+      placeholder="Enter Your Age..."
+      id="age"
+      formControlName="age"
+    />
+    <p
+      *ngIf="
+       reactiveForm.errors?.['ageisnotnull'] &&
+        reactiveForm.get('age').touched
+      "
+    >
+      Please Enter Your Age
+    </p>
+    <button id="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+#btn{
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    display: block;
+    margin: 0.5rem;
+}
+input{
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: block;
+    margin-top: 5px;
+    margin: 0.5rem;
+    font: inherit;
+}
+label{
+    margin:0.5rem
+}
+form{
+    background-color: rgb(193, 188, 188);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    width: 600px;
+    display: none;
+}
+.showForm{
+   display: block;
+}
+#addFood,#closeForm{
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    margin-left: 0.5rem;
+}

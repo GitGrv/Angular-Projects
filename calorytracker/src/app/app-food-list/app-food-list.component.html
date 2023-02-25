@@ -1,0 +1,21 @@
+
+<div id="displayContainer">
+<div id="displayFoods" *ngFor="let food of listOfFoods | filter:searchFoodInList">
+  <div class="food">
+    <div class="image">
+      <img src="{{food.img}}" alt="" />
+    </div>
+    <div class="food-info">
+      <p>{{ food.name }}</p>
+      <p>Calories: {{ food.calories }}</p>
+    </div>
+    <div class="btn">
+      <form action="" [formGroup]="foodNumbers">
+        <input type="number" value="" formControlName="numberOfFoodItem">
+        </form>
+        <button (click)="addFoodToTodaysList(food)">Add</button>
+    </div>
+  </div>
+</div>
+</div>
+

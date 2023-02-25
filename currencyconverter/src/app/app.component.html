@@ -1,0 +1,32 @@
+<form id="Currency-Coverter" [formGroup]="reactiveForm" (ngSubmit)="showResult()">
+    <h1>Currency Converter</h1>
+    <div id="currency">
+      <div id="sourceCurrency">
+        <label for="">From Currency</label>
+        <select name="" id="fromCurrency" formControlName="currencyFrom">
+          <option id="USD" value="1.126735">USD</option>
+          <option id="GBP" value="0.876893">GBP</option>
+          <option id="INR" value="79.677056">INR</option>
+        </select>
+      </div>
+  
+      <div id="destinationCurrency">
+        <label for="">To Currency</label>
+        <select name="" id="toCurrency" formControlName="currencyTo">
+          <option id="USD" value="1.126735">USD</option>
+          <option id="GBP" value="0.876893">GBP</option>
+          <option id="INR" value="79.677056">INR</option>
+        </select>
+      </div>
+    </div>
+    <div id="amountSection">
+      <label for="amount">Amount</label>
+      <input type="number" name="" id="amount" placeholder="Amount to be convert..." formControlName="amount" />
+    </div>
+    <div id="btn">
+      <button id="submitButton" type="submit">Submit</button>
+    </div>
+    <div id="result">
+      <div id="resValue">{{ amt | currencyPipe : cF : cT }}</div>
+    </div>
+  </form>
